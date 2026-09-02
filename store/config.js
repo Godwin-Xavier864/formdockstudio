@@ -44,6 +44,16 @@ window.APP_CONFIG = {
   heroSubtitle: "Shop top-quality products at unbeatable prices. New arrivals every week!",
   announcementText: "Free shipping on orders over $50!",
 
+  // Feature & Trust Badges Content
+  feature1Title: "Free Shipping",
+  feature1Desc: "On orders over $50",
+  feature2Title: "30-Day Returns",
+  feature2Desc: "Hassle-free returns",
+  feature3Title: "Secure Payment",
+  feature3Desc: "100% secure checkout",
+  feature4Title: "24/7 Support",
+  feature4Desc: "We're here to help",
+
   // Enquiry Section Content
   enquiryTitle: "Send Us an Enquiry",
   enquirySubtitle: "Have questions or need assistance? Fill out the form below and our team will get back to you promptly.",
