@@ -79,5 +79,6 @@ window.APP_CONFIG = {
   twitterUrl: "https://x.com",
 
   // Coupon System Settings
-  enableCoupons: true                 // Enable/disable discount coupon code field in checkout
+  enableCoupons: true,                // Enable/disable discount coupon code field in checkout
+  sampleCoupons: "SAVE10, WELCOME20"  // Sample promo codes suggested to users in checkout UI
 };
