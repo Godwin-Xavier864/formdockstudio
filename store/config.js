@@ -10,6 +10,7 @@ window.APP_CONFIG = {
   demo: true,
 
   // Store Credentials & API Keys
+  apiBaseUrl: "https://api.formdock.in",
   shopName: "ShopHub",
   shopApiKey: "fd_live_sample_key_12345",
   enquiryApiKey: "fd_live_sample_key_12345", // FormDock Public API Key for enquiry form submissions
