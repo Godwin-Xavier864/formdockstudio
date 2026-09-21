@@ -7,12 +7,12 @@
  */
 window.APP_CONFIG = {
   // Demo Mode: Set to true to show demo products, set to false to fetch only from backend API
-  demo: true,
+  demo: false,
 
   // Store Credentials & API Keys
   apiBaseUrl: "https://api.formdock.in",
   shopName: "ShopHub",
-  shopApiKey: "fd_live_sample_key_12345",
+  shopApiKey: "6718ec8f4a9205d5d81d37fd42f9e4b0baec13dafd56fcae",
   enquiryApiKey: "fd_live_sample_key_12345", // FormDock Public API Key for enquiry form submissions
 
   // Theme & Colors (Change hex colors to customize the UI instantly)
@@ -67,10 +67,14 @@ window.APP_CONFIG = {
   borderRadius: "8px",                // Global border radius (e.g., "0px", "8px", "16px", "24px")
   cardShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)", // Card drop shadow
   productsPerRow: 4,                  // Products grid columns on desktop (3, 4, or 5)
+  productsPerCategoryOnMainPage: 4,    // Maximum number of products to show per category on main page before "More"
   containerMaxWidth: "1280px",        // Max width of main page containers
 
   // UI Element & Feature Toggles
-  showAnnouncementBar: true,          // Toggle top announcement bar on/off
+  showAnnouncementBar: true,          // Toggle top announcement bar on/off (true / false)
+  showSecondaryAnnouncement: true,    // Toggle secondary announcement bar in catalog/hero area (true / false)
+  showPopupAnnouncement: true,        // Toggle pop-up announcement / modal ad on/off (true / false)
+  announcementPlacement: "both",      // Configurable placement options: "top" (top header only), "catalog" (above product catalog), "hero" (inside hero area), or "both"
   showTrustBadges: true,              // Toggle trust badges section on/off
   showWishlistButton: true,           // Toggle wishlist heart buttons on product cards
   showStockBadges: true,              // Toggle stock status tags on product cards
