@@ -2,9 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FormDock EcoStore</title>
+    <!-- PWA Manifest & Meta Tags -->
+    <link rel="manifest" id="manifest-link" href="manifest.webmanifest" />
+    <meta name="theme-color" id="theme-color-meta" content="#111827" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" id="apple-app-title" content="FormDock EcoStore" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,9 +21,43 @@
     <!-- Razorpay Checkout SDK -->
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <!-- Unbundled Runtime Config -->
-    <script src="/config.js"></script>
-    <script type="module" crossorigin src="/assets/index-_fj67mJU.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-b2ngQ_SC.css">
+    <script src="config.js"></script>
+    <script>
+      (function() {
+        try {
+          var cfg = window.APP_CONFIG;
+          if (cfg) {
+            if (cfg.shopName) {
+              document.title = cfg.shopName;
+              var appleTitle = document.getElementById('apple-app-title');
+              if (appleTitle) appleTitle.content = cfg.shopName;
+            }
+            var themeColor = cfg.buttonColor || cfg.uiColor || '#111827';
+            var metaTheme = document.getElementById('theme-color-meta');
+            if (metaTheme) metaTheme.content = themeColor;
+
+            if (cfg.shopName) {
+              fetch('manifest.webmanifest')
+                .then(function(res) { return res.json(); })
+                .then(function(manifest) {
+                  manifest.name = cfg.shopName;
+                  manifest.short_name = cfg.shopName.length > 12 ? cfg.shopName.substring(0, 12) : cfg.shopName;
+                  if (themeColor) manifest.theme_color = themeColor;
+                  var blob = new Blob([JSON.stringify(manifest)], { type: 'application/manifest+json' });
+                  var manifestURL = URL.createObjectURL(blob);
+                  var link = document.getElementById('manifest-link');
+                  if (link) link.href = manifestURL;
+                })
+                .catch(function() {});
+            }
+          }
+        } catch (e) {
+          console.warn('[PWA] Config sync error:', e);
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="./assets/index-C3HhAa6N.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DJAMBf5a.css">
   </head>
   <body>
     <div id="root"></div>

@@ -7,12 +7,12 @@
  */
 window.APP_CONFIG = {
   // Demo Mode: Set to true to show demo products, set to false to fetch only from backend API
-  demo: false,
+  demo: true,
 
   // Store Credentials & API Keys
   apiBaseUrl: "https://api.formdock.in",
   shopName: "ShopHub",
-  shopApiKey: "6718ec8f4a9205d5d81d37fd42f9e4b0baec13dafd56fcae",
+  shopApiKey: "fd_live_sample_key_12345",
   enquiryApiKey: "fd_live_sample_key_12345", // FormDock Public API Key for enquiry form submissions
 
   // Theme & Colors (Change hex colors to customize the UI instantly)
